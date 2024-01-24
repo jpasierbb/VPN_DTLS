@@ -53,3 +53,5 @@ dkms.conf
 
 # Other additional files
 .vscode
+certs/server_cert.pem
+certs/server_key.pem
