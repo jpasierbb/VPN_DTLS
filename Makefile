@@ -13,7 +13,6 @@ OUTPUT := output
 # Define source directories
 CLIENT_SRC := src/client
 SERVER_SRC := src/server
-SHARED_SRC := src/shared
 
 # Define include directory
 INCLUDE := include
@@ -41,6 +40,9 @@ INCLUDES := $(patsubst %,-I%, $(INCLUDE:%/=%))
 
 # C library paths
 LIBS := $(patsubst %,-L%, $(LIB:%/=%))
+
+# Link OpenSSL libraries
+LIBS += -lssl -lcrypto
 
 # Define the C source files
 CLIENT_SOURCES := $(wildcard $(CLIENT_SRC)/*.c) $(wildcard $(SHARED_SRC)/*.c)
